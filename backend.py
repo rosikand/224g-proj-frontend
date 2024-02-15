@@ -11,6 +11,7 @@ import json
 import nhl 
 import nba
 from openai import OpenAI
+import streamlit as st
 
 
 
@@ -27,7 +28,7 @@ class BackendInterface:
         self.nba = nba.NBAInterface()
         self.nhl = nhl.NHLInterface()
 
-        self.openai_api_key = r'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'
+        self.openai_api_key = st.secrets["openai_key"]
 
 
     def openai_response(self, prompt):
